@@ -22,7 +22,7 @@
                     ['type' => 'video', 'file' => 'videos/cineninja.mp4'],
                     ['type' => 'image', 'file' => 'dtakeer.jpg', 'deskripsi' => 'Kawasaki Dtraker - Special Edtion'],
                     ['type' => 'video', 'file' => 'videos/cinemt25.mp4'],
-                    ['type' => 'image', 'file' => 'zxfoto3.jpg', 'deskripsi' => 'Kawasaki Ninja 250cc - Dashboard'],
+                    ['type' => 'image', 'file' => 'ninja3.jpg', 'deskripsi' => 'Kawasaki Ninja 250cc - Dashboard'],
                     ['type' => 'image', 'file' => 'yamahamt25.jpg', 'deskripsi' => 'Yamaha MT-25'],
                 ];
             @endphp
@@ -50,7 +50,7 @@
                         <div class="aspect-[9/16] bg-black">
                             <video controls class="w-full h-full object-cover">
                                 <source src="{{ asset($item['file']) }}" type="video/mp4">
-                                Browser Anda tidak mendukung pemutaran video.
+                                Browser Anda tidak mendukung pemutaran video..
                             </video>
                         </div>
                     </div>
