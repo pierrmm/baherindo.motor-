@@ -1,6 +1,5 @@
 <section id="galeri" x-data="{ open: false, selectedImage: '' }" class="pt-16 bg-gradient-to-br from-indigo-100 to-[#4b4c9d]/10 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <!-- Header -->
         <div class="text-center mb-16">
             <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Galeri Foto & Video Motor Bekas
@@ -13,7 +12,6 @@
             </a>
         </div>
 
-        <!-- Galeri Grid (Foto + Video) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @php
                 $galeri = [
@@ -31,7 +29,6 @@
 
             @foreach ($galeri as $item)
                 @if ($item['type'] === 'image')
-                    <!-- Item Gambar -->
                     <div 
                         class="relative group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105 duration-300 cursor-pointer"
                         @click="open = true; selectedImage = '{{ asset('images/galeri/' . $item['file']) }}'"
@@ -49,7 +46,6 @@
                         </div>
                     </div>
                 @elseif ($item['type'] === 'video')
-                    <!-- Item Video -->
                     <div class="rounded-xl shadow-lg overflow-hidden bg-white group hover:shadow-xl transition">
                         <div class="aspect-[9/16] bg-black">
                             <video controls class="w-full h-full object-cover">
@@ -62,7 +58,6 @@
             @endforeach
         </div>
 
-        <!-- Modal Foto -->
         <div 
             class="fixed inset-0 backdrop-blur-sm bg-black/10 flex items-center justify-center z-50 p-4"
             x-show="open"
