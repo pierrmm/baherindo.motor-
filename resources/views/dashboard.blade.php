@@ -145,7 +145,7 @@
             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200">Motor Terlaris</h3>
-                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Lihat Semua</a>
+                    <a href="" class="text-blue-600 hover:text-blue-800 font-medium">Lihat Semua</a>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
