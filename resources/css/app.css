@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .form-input {
+        @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 bg-white text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+    }
+}
+
+/* Force light background for inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    background-color: white !important;
+    color: #111827 !important;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #9CA3AF !important;
+}
