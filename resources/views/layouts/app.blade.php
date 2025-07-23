@@ -38,11 +38,11 @@
                                 <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                                     {{ __('Dashboard') }}
                                 </x-nav-link>
-                                <x-nav-link href="#" :active="false">
+                                <x-nav-link href="" :active="false">
                                     {{ __('Motor') }}
                                 </x-nav-link>
-                                <x-nav-link href="#" :active="false">
-                                    {{ __('Customer') }}
+                              <x-nav-link href="{{ route('listmotor') }}" :active="request()->routeIs('listmotor')">
+                                    {{ __('Daftar') }}
                                 </x-nav-link>
                                 <x-nav-link href="#" :active="false">
                                     {{ __('Transaksi') }}
