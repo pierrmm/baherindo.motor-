@@ -11,6 +11,7 @@
     <body class="antialiased">
         @include('partials.navigation')
         @include('partials.hero')
+        @include('partials.foto')
         @include('partials.features')
         @include('partials.motors')
         @include('partials.about')

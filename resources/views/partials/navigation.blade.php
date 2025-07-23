@@ -14,11 +14,11 @@
 
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
-                    <a href="#home" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-                                        <a href="#home" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Galeri</a>
-                    <a href="#motors" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Motor</a>
-                    <a href="#about" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Tentang Kami</a>
-                    <a href="#contact" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Kontak</a>
+                    <a href="#home" class="text-gray-900 hover:text-[#4b4c9d] px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="#galeri" class="text-gray-900 hover:text-[#4b4c9d] px-3 py-2 rounded-md text-sm font-medium transition-colors">Gallery</a>
+                    <a href="#motors" class="text-gray-900 hover:text-[#4b4c9d] px-3 py-2 rounded-md text-sm font-medium transition-colors">Motor</a>
+                    <a href="#about" class="text-gray-900 hover:text-[#4b4c9d] px-3 py-2 rounded-md text-sm font-medium transition-colors">Tentang Kami</a>
+                    <a href="#contact" class="text-gray-900 hover:text-[#4b4c9d] px-3 py-2 rounded-md text-sm font-medium transition-colors">Kontak</a>
                 </div>
             </div>
 
@@ -28,9 +28,9 @@
                         @auth
                             <a href="{{ url('/dashboard') }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">Dashboard</a>
                         @else
-                            <a href="{{ route('login') }}" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
+                            <a href="{{ route('login') }}" class="text-gray-900 hover:text-[#4b4c9d] px-3 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">Register</a>
+                                <a href="{{ route('register') }}" class="bg-[#4b4c9d] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">Register</a>
                             @endif
                         @endauth
                     @endif
