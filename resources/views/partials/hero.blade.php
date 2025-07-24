@@ -142,14 +142,14 @@
                         Temukan motor impian Anda di Baherindo Motor. Kami menyediakan berbagai pilihan motor bekas berkualitas dengan garansi dan pelayanan terpercaya.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 animate-on-load delay-400">
-                        <a href="#motors" class="bg-[#4b4c9d] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#3e3f86] transition-all duration-300 text-center btn-hover transform hover:scale-105 hover:shadow-lg">
-                            Lihat Motor
-                        </a>
-                        <a href="#contact" class="border-2 border-[#4b4c9d] text-[#4b4c9d] px-8 py-3 rounded-lg font-semibold hover:bg-[#4b4c9d] hover:text-white transition-all duration-300 text-center btn-hover transform hover:scale-105 hover:shadow-lg">
-                            Hubungi Kami
-                        </a>
-                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 animate-on-load delay-400 relative z-20">
+          <a href="#motors" class="bg-[#4b4c9d] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#3e3f86] transition-all duration-300 text-center btn-hover transform hover:scale-105 hover:shadow-lg">
+            Lihat Motor
+          </a>
+          <a href="#contact" class="border-2 border-[#4b4c9d] text-[#4b4c9d] px-8 py-3 rounded-lg font-semibold hover:bg-[#4b4c9d] hover:text-white transition-all duration-300 text-center btn-hover transform hover:scale-105 hover:shadow-lg">
+            Hubungi Kami
+          </a>
+        </div>
                 </div>
 
                 <!-- Right Content -->

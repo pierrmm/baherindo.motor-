@@ -25,7 +25,7 @@
     $paginatedImages = array_slice($images, $start, $perPage);
 @endphp
 
-<section class="py-16 px-4 bg-gradient-to-br from-[#4b4c9d]/10 to-indigo-100 min-h-screen" x-data="{ open: false, selectedImage: '', selectedTitle: '', selectedYear: '' }">
+<section class="pt-16 bg-gradient-to-br from-[#4b4c9d]/10 to-indigo-100 min-h-screen flex items-center overflow-hidden" x-data="{ open: false, selectedImage: '', selectedTitle: '', selectedYear: '' }">
     <div class="max-w-7xl mx-auto">
         <h1 class="text-4xl font-bold text-gray-800 mb-12 mt-16 text-center">
             Galeri Motor Bekas

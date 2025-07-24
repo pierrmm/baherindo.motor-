@@ -1,4 +1,4 @@
-<section id="galeri" x-data="{ open: false, selectedImage: '' }" class="pt-16 bg-gradient-to-br from-indigo-100 to-[#4b4c9d]/10 min-h-screen">
+<section id="galeri" x-data="{ open: false, selectedImage: '' }" class="pt-16 bg-gradient-to-br from-[#4b4c9d]/10 to-indigo-100 min-h-screen flex items-center overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
             <div class="grid grid-cols-2 gap-4">
@@ -44,17 +44,19 @@
 
         </div>
 
-        <div 
-            class="fixed inset-0 backdrop-blur-sm bg-black/10 flex items-center justify-center z-50 p-4"
-            x-show="open"
-            x-transition
-            @click.away="open = false"
-        >
-            <img :src="selectedImage" alt="Foto Motor HD" class="max-h-[90vh] max-w-full rounded-lg shadow-lg">
-            <button 
-                class="absolute top-5 right-5 text-white text-3xl font-bold" 
-                @click="open = false"
-            >&times;</button>
-        </div>
+        {{-- <div 
+    class="fixed inset-0 backdrop-blur-sm bg-black/10 flex items-center justify-center z-50 p-4"
+    x-show="open"
+    x-transition
+    @click.away="open = false"
+>
+    <img src="{{ asset('images/logo.png') }}" alt="Logo Baherindo" class="h-90 max-w-full rounded-lg shadow-lg">
+    
+    <button 
+        class="absolute top-5 right-5 text-white text-3xl font-bold" 
+        @click="open = false"
+    >&times;</button>
+</div> --}}
+
     </div>
 </section>
