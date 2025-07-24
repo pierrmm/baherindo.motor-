@@ -69,7 +69,7 @@
                             ['number' => 1000, 'suffix' => '+', 'label' => 'Motor Terjual', 'icon' => 'motorcycle'],
                             ['number' => 8, 'suffix' => '+', 'label' => 'Tahun Pengalaman', 'icon' => 'calendar'],
                             ['number' => 500, 'suffix' => '+', 'label' => 'Customer Puas', 'icon' => 'star'],
-                            ['number' => 24, 'suffix' => '/7', 'label' => 'Customer Service', 'icon' => 'support']
+                            ['number' => 24, 'suffix' => '24/7', 'label' => 'Customer Service', 'icon' => 'support']
                         ];
                     @endphp
 

@@ -4,11 +4,7 @@
             <!-- Company Info -->
             <div class="col-span-1 md:col-span-2">
                 <div class="flex items-center mb-4">
-                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
+                       <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-10 h-10 rounded-lg mr-3 object-cover">
                     <span class="text-xl font-bold">Baherindo Motor</span>
                 </div>
                 <p class="text-gray-300 mb-6 max-w-md">
