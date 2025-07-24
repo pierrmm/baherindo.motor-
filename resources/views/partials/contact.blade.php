@@ -150,7 +150,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- Contact Section -->
-    <section id="contact" class="pt-16 bg-gradient-to-br from-[#4b4c9d]/10 to-indigo-100 min-h-screen flex items-center overflow-hidden">
+    <section id="contact" class="pt-16 bg-gradient-to-br from-indigo-100 to-[#4b4c9d]/10 min-h-screen flex items-center overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
             <div class="text-center mb-16">

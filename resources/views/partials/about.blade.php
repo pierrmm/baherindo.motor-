@@ -66,9 +66,9 @@
                 <div class="grid grid-cols-2 gap-6 mt-10 pt-8 border-t border-gray-200 fade-in" data-delay="1200">
                     @php
                         $stats = [
-                            ['number' => 1000, 'suffix' => '+', 'label' => 'Motor Terjual', 'icon' => 'motorcycle'],
-                            ['number' => 8, 'suffix' => '+', 'label' => 'Tahun Pengalaman', 'icon' => 'calendar'],
-                            ['number' => 500, 'suffix' => '+', 'label' => 'Customer Puas', 'icon' => 'star'],
+                            ['number' => 1000, 'suffix' => '1000', 'label' => 'Motor Terjual', 'icon' => 'motorcycle'],
+                            ['number' => 8, 'suffix' => '8', 'label' => 'Tahun Pengalaman', 'icon' => 'calendar'],
+                            ['number' => 500, 'suffix' => '500', 'label' => 'Customer Puas', 'icon' => 'star'],
                             ['number' => 24, 'suffix' => '24/7', 'label' => 'Customer Service', 'icon' => 'support']
                         ];
                     @endphp
@@ -100,7 +100,7 @@
                             @endswitch
                         </div>
                         <div class="text-3xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors">
-                            <span class="counter" data-target="{{ $stat['number'] }}">0</span>{{ $stat['suffix'] }}
+                            <span class="counter" data-target="{{ $stat['number'] }}"></span>{{ $stat['suffix'] }}
                         </div>
                         <div class="text-gray-600 text-sm font-medium">
                             {{ __($stat['label']) }}
