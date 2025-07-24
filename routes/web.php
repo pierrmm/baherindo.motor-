@@ -24,7 +24,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Sale routes
     Route::resource('sales', SaleController::class);
     Route::get('/api/motors/{motor}/price', [SaleController::class, 'getMotorPrice'])->name('motors.price');
+
 });
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

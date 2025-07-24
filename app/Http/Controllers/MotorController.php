@@ -51,7 +51,7 @@ class MotorController extends Controller
             'year' => 'required|integer|min:1990|max:' . (date('Y') + 1),
             'color' => 'required|string|max:255',
             'mileage' => 'required|integer|min:0',
-            'price' => 'required|numeric|min:0',
+           'price' => ['required'],
             'condition' => 'required|in:excellent,good,fair,poor',
             'status' => 'required|in:available,sold,reserved',
             'description' => 'nullable|string',
@@ -60,9 +60,16 @@ class MotorController extends Controller
             'fuel_type' => 'nullable|string|max:255',
             'license_plate' => 'nullable|string|max:255',
             'purchase_date' => 'nullable|date',
-            'purchase_price' => 'nullable|numeric|min:0',
+            'purchase_price' => 'nullable', // hapus 'numeric'
+
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
+
+        $validated['purchase_price'] = $request->filled('purchase_price')
+    ? (float) str_replace(',', '.', str_replace('.', '', $request->purchase_price))
+    : null;
+
+        $validated['price'] = (float) str_replace(',', '.', str_replace('.', '', $request->price));
 
         // Handle image uploads
         $imagePaths = [];

@@ -22,7 +22,7 @@
                         </div>
                         <div class="ml-4">
                             <h3 class="text-lg font-semibold">Total Motor</h3>
-                            <p class="text-2xl font-bold">125</p>
+                            <p class="text-2xl font-bold">{{ $totalMotors }}</p>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="ml-4">
                             <h3 class="text-lg font-semibold">Penjualan Bulan Ini</h3>
-                            <p class="text-2xl font-bold">15</p>
+                            <p class="text-2xl font-bold">{{ $monthlySales }}</p>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="ml-4">
                             <h3 class="text-lg font-semibold">Customer</h3>
-                            <p class="text-2xl font-bold">89</p>
+                            <p class="text-2xl font-bold">{{ $totalCustomers }}</p>
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="ml-4">
                             <h3 class="text-lg font-semibold">Pendapatan</h3>
-                            <p class="text-2xl font-bold">2.5M</p>
+                            <p class="text-2xl font-bold">{{ $monthlyRevenue }}</p>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                 <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                     <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">Quick Actions</h3>
                     <div class="grid grid-cols-2 gap-4">
-                        <a href="#" class="flex items-center p-4 bg-blue-50 dark:bg-blue-900 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800 transition-colors">
+                        <a href="{{ route('motors.create') }}" class="flex items-center p-4 bg-blue-50 dark:bg-blue-900 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800 transition-colors">
                             <div class="p-2 bg-blue-500 rounded-lg mr-3">
                                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -142,46 +142,94 @@
                 </div>
             </div>
 
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200">Motor Terlaris</h3>
-                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Lihat Semua</a>
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-2xl font-extrabold text-[#3a3b7a] dark:text-[#b3b4e0] tracking-tight">Motor Terlaris</h3>
+                    <a href="#" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#4b4c9d] to-[#6c6dd6] hover:from-[#3a3b7a] hover:to-[#4b4c9d] text-white text-sm font-semibold rounded-lg shadow transition-all duration-200 hover:scale-105 hover:shadow-xl">
+                        Lihat Semua
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                        <div class="bg-gray-200 dark:bg-gray-700 h-48 rounded-lg mb-4 flex items-center justify-center">
-                            <span class="text-gray-500 dark:text-gray-400">Honda Beat 2020</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-[#e9eafc] to-white dark:from-[#23244a] dark:to-gray-900 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 border border-[#e0e1f7] dark:border-[#3a3b7a]">
+                        <div class="relative h-40 bg-[#4b4c9d] dark:bg-[#3a3b7a] flex items-center justify-center">
+                            <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow">Ready</span>
+                            <span class="text-white font-bold text-xl drop-shadow">Honda Beat 2020</span>
                         </div>
-                                                <h4 class="font-semibold text-gray-800 dark:text-gray-200">Honda Beat 2020</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Tahun: 2020 | KM: 15.000</p>
-                        <p class="text-lg font-bold text-blue-600">Rp 12.500.000</p>
-                        <div class="mt-3">
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Ready</span>
-                        </div>
-                    </div>
-
-                    <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                        <div class="bg-gray-200 dark:bg-gray-700 h-48 rounded-lg mb-4 flex items-center justify-center">
-                            <span class="text-gray-500 dark:text-gray-400">Yamaha Mio 2019</span>
-                        </div>
-                        <h4 class="font-semibold text-gray-800 dark:text-gray-200">Yamaha Mio 2019</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Tahun: 2019 | KM: 22.000</p>
-                        <p class="text-lg font-bold text-blue-600">Rp 10.800.000</p>
-                        <div class="mt-3">
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Ready</span>
+                        <div class="p-5">
+                            <h4 class="font-bold text-[#3a3b7a] dark:text-[#b3b4e0] mb-1">Honda Beat 2020</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Tahun: 2020 &bull; KM: 15.000</p>
+                            <p class="text-lg font-extrabold text-[#4b4c9d] dark:text-[#b3b4e0] mb-2">Rp 12.500.000</p>
+                            <button class="mt-3 w-full px-4 py-2 bg-[#4b4c9d] hover:bg-[#3a3b7a] text-white rounded-lg font-semibold transition-all duration-200">Detail</button>
                         </div>
                     </div>
-
-                    <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                        <div class="bg-gray-200 dark:bg-gray-700 h-48 rounded-lg mb-4 flex items-center justify-center">
-                            <span class="text-gray-500 dark:text-gray-400">Suzuki Nex 2021</span>
+                    <!-- Card 2 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-[#e9eafc] to-white dark:from-[#23244a] dark:to-gray-900 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 border border-[#e0e1f7] dark:border-[#3a3b7a]">
+                        <div class="relative h-40 bg-[#4b4c9d] dark:bg-[#3a3b7a] flex items-center justify-center">
+                            <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow">Ready</span>
+                            <span class="text-white font-bold text-xl drop-shadow">Yamaha Mio 2019</span>
                         </div>
-                        <h4 class="font-semibold text-gray-800 dark:text-gray-200">Suzuki Nex 2021</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Tahun: 2021 | KM: 8.500</p>
-                        <p class="text-lg font-bold text-blue-600">Rp 14.200.000</p>
-                        <div class="mt-3">
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Booking</span>
+                        <div class="p-5">
+                            <h4 class="font-bold text-[#3a3b7a] dark:text-[#b3b4e0] mb-1">Yamaha Mio 2019</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Tahun: 2019 &bull; KM: 22.000</p>
+                            <p class="text-lg font-extrabold text-[#4b4c9d] dark:text-[#b3b4e0] mb-2">Rp 10.800.000</p>
+                            <button class="mt-3 w-full px-4 py-2 bg-[#4b4c9d] hover:bg-[#3a3b7a] text-white rounded-lg font-semibold transition-all duration-200">Detail</button>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-[#e9eafc] to-white dark:from-[#23244a] dark:to-gray-900 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 border border-[#e0e1f7] dark:border-[#3a3b7a]">
+                        <div class="relative h-40 bg-[#4b4c9d] dark:bg-[#3a3b7a] flex items-center justify-center">
+                            <span class="absolute top-2 right-2 bg-yellow-400 text-white text-xs px-3 py-1 rounded-full shadow">Booking</span>
+                            <span class="text-white font-bold text-xl drop-shadow">Suzuki Nex 2021</span>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-bold text-[#3a3b7a] dark:text-[#b3b4e0] mb-1">Suzuki Nex 2021</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Tahun: 2021 &bull; KM: 8.500</p>
+                            <p class="text-lg font-extrabold text-[#4b4c9d] dark:text-[#b3b4e0] mb-2">Rp 14.200.000</p>
+                            <button class="mt-3 w-full px-4 py-2 bg-[#4b4c9d] hover:bg-[#3a3b7a] text-white rounded-lg font-semibold transition-all duration-200">Detail</button>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-[#e9eafc] to-white dark:from-[#23244a] dark:to-gray-900 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 border border-[#e0e1f7] dark:border-[#3a3b7a]">
+                        <div class="relative h-40 bg-[#4b4c9d] dark:bg-[#3a3b7a] flex items-center justify-center">
+                            <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow">Ready</span>
+                            <span class="text-white font-bold text-xl drop-shadow">Honda Vario 2018</span>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-bold text-[#3a3b7a] dark:text-[#b3b4e0] mb-1">Honda Vario 2018</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Tahun: 2018 &bull; KM: 18.000</p>
+                            <p class="text-lg font-extrabold text-[#4b4c9d] dark:text-[#b3b4e0] mb-2">Rp 13.000.000</p>
+                            <button class="mt-3 w-full px-4 py-2 bg-[#4b4c9d] hover:bg-[#3a3b7a] text-white rounded-lg font-semibold transition-all duration-200">Detail</button>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-[#e9eafc] to-white dark:from-[#23244a] dark:to-gray-900 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 border border-[#e0e1f7] dark:border-[#3a3b7a]">
+                        <div class="relative h-40 bg-[#4b4c9d] dark:bg-[#3a3b7a] flex items-center justify-center">
+                            <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow">Ready</span>
+                            <span class="text-white font-bold text-xl drop-shadow">Yamaha NMAX 2022</span>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-bold text-[#3a3b7a] dark:text-[#b3b4e0] mb-1">Yamaha NMAX 2022</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Tahun: 2022 &bull; KM: 5.000</p>
+                            <p class="text-lg font-extrabold text-[#4b4c9d] dark:text-[#b3b4e0] mb-2">Rp 27.000.000</p>
+                            <button class="mt-3 w-full px-4 py-2 bg-[#4b4c9d] hover:bg-[#3a3b7a] text-white rounded-lg font-semibold transition-all duration-200">Detail</button>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-[#e9eafc] to-white dark:from-[#23244a] dark:to-gray-900 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 border border-[#e0e1f7] dark:border-[#3a3b7a]">
+                        <div class="relative h-40 bg-[#4b4c9d] dark:bg-[#3a3b7a] flex items-center justify-center">
+                            <span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-3 py-1 rounded-full shadow">Sold</span>
+                            <span class="text-white font-bold text-xl drop-shadow">Suzuki Satria 2017</span>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-bold text-[#3a3b7a] dark:text-[#b3b4e0] mb-1">Suzuki Satria 2017</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Tahun: 2017 &bull; KM: 25.000</p>
+                            <p class="text-lg font-extrabold text-[#4b4c9d] dark:text-[#b3b4e0] mb-2">Rp 11.000.000</p>
+                            <button class="mt-3 w-full px-4 py-2 bg-[#4b4c9d] hover:bg-[#3a3b7a] text-white rounded-lg font-semibold transition-all duration-200">Detail</button>
                         </div>
                     </div>
                 </div>
