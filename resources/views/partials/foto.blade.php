@@ -11,7 +11,7 @@
 
                 @foreach ($heroImages as $file)
                     <div 
-                        class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 duration-300 cursor-pointer"
+                        class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 duration-300 cursor-pointer opacity-0 scale-95 animate-on-scroll"
                         @click="open = true; selectedImage = '{{ asset('images/galeri/' . $file) }}'"
                     >
                         <img 
@@ -58,3 +58,23 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'scale-95');
+                    entry.target.classList.add('opacity-100', 'scale-100', 'transition-all', 'duration-700');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
