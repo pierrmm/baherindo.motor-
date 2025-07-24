@@ -11,8 +11,8 @@
 
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
-                    <a href="#home" class="text-white hover:text-[#c4c4f5] px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-                    <a href="#galeri" class="text-white hover:text-[#c4c4f5] px-3 py-2 rounded-md text-sm font-medium transition-colors">Galeri</a>
+                    <a href="/" class="text-white hover:text-[#c4c4f5] px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="/koleksi" class="text-white hover:text-[#c4c4f5] px-3 py-2 rounded-md text-sm font-medium transition-colors">Gallery</a>
                     <a href="#motors" class="text-white hover:text-[#c4c4f5] px-3 py-2 rounded-md text-sm font-medium transition-colors">Motor</a>
                     <a href="#about" class="text-white hover:text-[#c4c4f5] px-3 py-2 rounded-md text-sm font-medium transition-colors">Tentang Kami</a>
                     <a href="#contact" class="text-white hover:text-[#c4c4f5] px-3 py-2 rounded-md text-sm font-medium transition-colors">Kontak</a>
