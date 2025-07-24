@@ -38,13 +38,13 @@
                                 <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                                     {{ __('Dashboard') }}
                                 </x-nav-link>
-                                <x-nav-link href="#" :active="false">
+                                <x-nav-link :href="route('motors.index')" :active="request()->routeIs('motors.*')">
                                     {{ __('Motor') }}
                                 </x-nav-link>
-                                <x-nav-link href="#" :active="false">
+                                <x-nav-link :href="route('customers.index')" :active="request()->routeIs('customers.*')">
                                     {{ __('Customer') }}
                                 </x-nav-link>
-                                <x-nav-link href="#" :active="false">
+                                <x-nav-link :href="route('sales.index')" :active="request()->routeIs('sales.*')">
                                     {{ __('Transaksi') }}
                                 </x-nav-link>
                                 <x-nav-link href="#" :active="false">
@@ -105,13 +105,13 @@
                         <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
                         </x-responsive-nav-link>
-                        <x-responsive-nav-link href="#" :active="false">
+                        <x-responsive-nav-link :href="route('motors.index')" :active="request()->routeIs('motors.*')">
                             {{ __('Motor') }}
                         </x-responsive-nav-link>
-                        <x-responsive-nav-link href="#" :active="false">
+                        <x-responsive-nav-link :href="route('customers.index')" :active="request()->routeIs('customers.*')">
                             {{ __('Customer') }}
                         </x-responsive-nav-link>
-                        <x-responsive-nav-link href="#" :active="false">
+                        <x-responsive-nav-link :href="route('sales.index')" :active="request()->routeIs('sales.*')">
                             {{ __('Transaksi') }}
                         </x-responsive-nav-link>
                         <x-responsive-nav-link href="#" :active="false">

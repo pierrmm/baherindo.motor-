@@ -5,24 +5,29 @@ namespace App\Http\Controllers;
 use App\Models\Motor;
 use App\Models\Customer;
 use App\Models\Sale;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index()
     {
+        $currentMonth = Carbon::now()->month;
+        $currentYear = Carbon::now()->year;
+
         $totalMotors = Motor::count();
         $availableMotors = Motor::where('status', 'available')->count();
         $totalCustomers = Customer::count();
+
+        // Fix for SQLite compatibility - use whereMonth and whereYear instead of DATE_FORMAT
         $monthlyRevenue = Sale::where('status', 'completed')
-            ->whereMonth('sale_date', Carbon::now()->month)
-            ->whereYear('sale_date', Carbon::now()->year)
+            ->whereMonth('sale_date', $currentMonth)
+            ->whereYear('sale_date', $currentYear)
             ->sum('final_price');
-        
+
         $monthlySales = Sale::where('status', 'completed')
-            ->whereMonth('sale_date', Carbon::now()->month)
-            ->whereYear('sale_date', Carbon::now()->year)
+            ->whereMonth('sale_date', $currentMonth)
+            ->whereYear('sale_date', $currentYear)
             ->count();
 
         $recentActivities = Sale::with(['motor', 'customer'])

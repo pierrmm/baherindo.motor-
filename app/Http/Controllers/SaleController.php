@@ -13,39 +13,50 @@ class SaleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
-    {
-        $query = Sale::with(['motor', 'customer', 'user']);
+ public function index(Request $request)
+{
+    $query = Sale::with(['motor', 'customer', 'user']);
 
-        // Filter by status
-        if ($request->filled('status')) {
-            $query->where('status', $request->status);
-        }
-
-        // Filter by date range
-        if ($request->filled('date_from')) {
-            $query->whereDate('sale_date', '>=', $request->date_from);
-        }
-
-        if ($request->filled('date_to')) {
-            $query->whereDate('sale_date', '<=', $request->date_to);
-        }
-
-        // Search
-        if ($request->filled('search')) {
-            $search = $request->search;
-            $query->whereHas('customer', function($q) use ($search) {
-                $q->where('name', 'like', "%{$search}%");
-            })->orWhereHas('motor', function($q) use ($search) {
-                $q->where('brand', 'like', "%{$search}%")
-                  ->orWhere('model', 'like', "%{$search}%");
-            });
-        }
-
-        $sales = $query->latest()->paginate(15);
-
-        return view('sales.index', compact('sales'));
+    // Filter by status
+    if ($request->filled('status')) {
+        $query->where('status', $request->status);
     }
+
+    // Filter by date range - SQLite compatible
+    if ($request->filled('date_from')) {
+        $query->whereDate('sale_date', '>=', $request->date_from);
+    }
+
+    if ($request->filled('date_to')) {
+        $query->whereDate('sale_date', '<=', $request->date_to);
+    }
+
+    // Filter by month and year - SQLite compatible
+    if ($request->filled('month')) {
+        $query->whereMonth('sale_date', $request->month);
+    }
+
+    if ($request->filled('year')) {
+        $query->whereYear('sale_date', $request->year);
+    }
+
+    // Search
+    if ($request->filled('search')) {
+        $search = $request->search;
+        $query->where(function($q) use ($search) {
+            $q->whereHas('customer', function($subQ) use ($search) {
+                $subQ->where('name', 'like', "%{$search}%");
+            })->orWhereHas('motor', function($subQ) use ($search) {
+                $subQ->where('brand', 'like', "%{$search}%")
+                    ->orWhere('model', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $sales = $query->latest()->paginate(15);
+
+    return view('sales.index', compact('sales'));
+}
 
     /**
      * Show the form for creating a new resource.

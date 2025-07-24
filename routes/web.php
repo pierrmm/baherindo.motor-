@@ -1,15 +1,30 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MotorController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SaleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
+    // Motor routes
+    Route::resource('motors', MotorController::class);
+    Route::delete('/motors/{motor}/images', [MotorController::class, 'deleteImage'])->name('motors.delete-image');
+    
+    // Customer routes
+    Route::resource('customers', CustomerController::class);
+    
+    // Sale routes
+    Route::resource('sales', SaleController::class);
+    Route::get('/api/motors/{motor}/price', [SaleController::class, 'getMotorPrice'])->name('motors.price');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
