@@ -1,5 +1,5 @@
 {{-- About Section Component dengan Animasi Laravel --}}
-<section id="about" class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+<section id="about" class="pt-16 bg-gradient-to-br from-[#4b4c9d]/10 to-indigo-100 min-h-screen flex items-center overflow-hidden">
     {{-- Animated Background --}}
     <div class="absolute inset-0 bg-grid-pattern opacity-5 animate-grid"></div>
     <div class="absolute top-0 right-0 w-72 h-72 bg-blue-100 rounded-full -translate-y-36 translate-x-36 opacity-30 animate-float"></div>

@@ -4,7 +4,7 @@
     $motors = Motor::where('status', 'available')->latest()->take(6)->get();
 @endphp
 
-<section id="motors" class="py-20 bg-gray-50">
+<section id="motors" class="pt-16 bg-gradient-to-br from-[#4b4c9d]/10 to-indigo-100 min-h-screen flex items-center overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Motor Pilihan</h2>

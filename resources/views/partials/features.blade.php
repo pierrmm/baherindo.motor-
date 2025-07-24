@@ -1,4 +1,4 @@
-<section class="py-24 bg-gradient-to-b from-white to-gray-50">
+<section class="pt-16 bg-gradient-to-br from-[#4b4c9d]/10 to-indigo-100 min-h-screen flex items-center overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-20">
       <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Mengapa Memilih Kami?</h2>
