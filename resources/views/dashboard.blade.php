@@ -37,59 +37,29 @@
                 @endforeach
             </div>
 
-
+            
                 {{-- Aktivitas Terbaru --}}
-                <div @click="openTimeline = true"
-                     class="cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition">
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">Aktivitas Terbaru</h3>
+                <div @click="openTimeline = true" class="cursor-pointer transition hover:scale-[1.01] active:scale-100 duration-200 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Aktivitas Terbaru</h3>
+                        <button class="text-sm text-blue-400 hover:underline">Lihat Semua</button>
+                    </div>
+
                     <div class="space-y-4">
                         <div class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                             <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
                             <div class="flex-1">
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Motor Honda Beat 2020 terjual</p>
-                                <p class="text-xs text-gray-500 dark:text-gray-500">2 jam yang lalu</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Motor Honda Beat 2020 terjual</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">2 jam yang lalu</p>
                             </div>
                         </div>
                         <div class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                             <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
                             <div class="flex-1">
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Motor baru ditambahkan: Yamaha Mio 2019</p>
-                                <p class="text-xs text-gray-500 dark:text-gray-500">5 jam yang lalu</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Motor baru ditambahkan: Yamaha Mio 2019</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">5 jam yang lalu</p>
                             </div>
                         </div>
-                        @php
-    $motors = [
-        ['nama' => 'Beat', 'jumlah_terjual' => 34],
-        ['nama' => 'Mio', 'jumlah_terjual' => 28],
-        ['nama' => 'Vario', 'jumlah_terjual' => 22],
-        ['nama' => 'Nmax', 'jumlah_terjual' => 18],
-        ['nama' => 'Scoopy', 'jumlah_terjual' => 11],
-    ];
-    $maxValue = max(array_column($motors, 'jumlah_terjual'));
-@endphp
-
-<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 mt-10">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Motor Terlaris</h3>
-
-    <div class="space-y-4">
-        @foreach($motors as $motor)
-            @php
-                $widthPercent = intval(($motor['jumlah_terjual'] / $maxValue) * 100);
-                $colors = ['bg-indigo-600', 'bg-yellow-500', 'bg-green-500', 'bg-pink-500', 'bg-red-500'];
-                $barColor = $colors[$loop->index % count($colors)];
-            @endphp
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $motor['nama'] }}</span>
-                    <span class="text-sm text-gray-500 dark:text-gray-400">{{ $motor['jumlah_terjual'] }}</span>
-                </div>
-                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
-                    <div class="h-4 {{ $barColor }} rounded-full transition-all duration-500" style="width: {{ $widthPercent }}%"></div>
-                </div>
-            </div>
-        @endforeach
-    </div>
-</div>
                     </div>
                 </div>
             </div>
@@ -97,38 +67,85 @@
             {{-- Modal Timeline --}}
             <div x-show="openTimeline" x-cloak class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                 <div @click.away="openTimeline = false"
-                     class="bg-white dark:bg-gray-900 p-6 rounded-xl max-w-lg w-full shadow-lg">
+                    class="bg-white dark:bg-gray-900 p-6 rounded-xl max-w-lg w-full shadow-lg">
                     <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">Timeline Aktivitas</h3>
-                    <div class="border-l-2 pl-4 space-y-4">
+
+                    <div class="border-l-2 border-gray-300 dark:border-gray-600 pl-6 space-y-6 relative">
                         <div class="relative">
-                            <div class="absolute -left-2 top-1 w-3 h-3 bg-green-500 rounded-full"></div>
-                            <p class="text-sm text-gray-700 dark:text-gray-300">
-                                Honda Beat 2020 terjual<br><span class="text-xs text-gray-500">2 jam yang lalu</span>
+                            <span class="absolute -left-3 top-1 w-3 h-3 bg-green-500 rounded-full ring-2 ring-white dark:ring-gray-900"></span>
+                            <p class="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                                Honda Beat 2020 terjual
                             </p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">2 jam yang lalu</p>
                         </div>
+
                         <div class="relative">
-                            <div class="absolute -left-2 top-1 w-3 h-3 bg-blue-500 rounded-full"></div>
-                            <p class="text-sm text-gray-700 dark:text-gray-300">
-                                Yamaha Mio 2019 ditambahkan<br><span class="text-xs text-gray-500">5 jam yang lalu</span>
+                            <span class="absolute -left-3 top-1 w-3 h-3 bg-blue-500 rounded-full ring-2 ring-white dark:ring-gray-900"></span>
+                            <p class="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                                Yamaha Mio 2019 ditambahkan
                             </p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">5 jam yang lalu</p>
                         </div>
+
                         <div class="relative">
-                            <div class="absolute -left-2 top-1 w-3 h-3 bg-yellow-500 rounded-full"></div>
-                            <p class="text-sm text-gray-700 dark:text-gray-300">
-                                Customer baru: Ahmad Rizki<br><span class="text-xs text-gray-500">1 hari yang lalu</span>
+                            <span class="absolute -left-3 top-1 w-3 h-3 bg-yellow-400 rounded-full ring-2 ring-white dark:ring-gray-900"></span>
+                            <p class="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                                Customer baru: Ahmad Rizki
                             </p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">1 hari yang lalu</p>
                         </div>
                     </div>
+
                     <div class="mt-6 text-right">
                         <button @click="openTimeline = false"
-                                class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg">Tutup</button>
+                                class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg">
+                            Tutup
+                        </button>
                     </div>
                 </div>
             </div>
 
-            {{-- Motor Terlaris (Vertical Bar) --}}
 
-</div>
-
-    
+            @php
+                $motors = [
+                    ['nama' => 'Beat', 'jumlah_terjual' => 34],
+                    ['nama' => 'Mio', 'jumlah_terjual' => 28],
+                    ['nama' => 'Vario', 'jumlah_terjual' => 22],
+                    ['nama' => 'Nmax', 'jumlah_terjual' => 18],
+                    ['nama' => 'Scoopy', 'jumlah_terjual' => 11],
+                ];
+                    $maxValue = max(array_column($motors, 'jumlah_terjual'));
+            @endphp
+        
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl py-8 p-6 mt-10 max-w-7xl mx-auto">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+                    Motor Terlaris
+                </h3>
+                <div class="space-y-4">
+                    @foreach($motors as $motor)
+                        @php
+                            $widthPercent = intval(($motor['jumlah_terjual'] / $maxValue) * 100);
+                            $colors = ['bg-indigo-600', 'bg-yellow-500', 'bg-green-500', 'bg-pink-500', 'bg-red-500'];
+                            $barColor = $colors[$loop->index % count($colors)];
+                        @endphp
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    {{ $motor['nama'] }}
+                                </span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">
+                                    {{ $motor['jumlah_terjual'] }}
+                                </span>
+                            </div>
+                            <div class="relative w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 overflow-hidden">
+                                <div 
+                                    class="absolute top-0 left-0 h-4 {{ $barColor }} rounded-full transition-all duration-500" 
+                                    style="width: {{ $widthPercent }}%">
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
 </x-app-layout>
