@@ -43,9 +43,6 @@
                                 Login
                                 <span class="absolute left-0 bottom-0 w-full h-0.5 bg-[#c4c4f5] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
                             </a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="bg-white text-[#4b4c9d] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#c4c4f5] hover:text-[#4b4c9d] transition-all duration-300 transform hover:scale-105">Register</a>
-                            @endif
                         @endauth
                     @endif
                 </div>
@@ -71,9 +68,6 @@
                         <a href="{{ url('/dashboard') }}" class="bg-white text-[#4b4c9d] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#c4c4f5] hover:text-[#4b4c9d] transition-colors duration-300">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}" class="text-white hover:text-[#c4c4f5] block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">Login</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="bg-white text-[#4b4c9d] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#c4c4f5] hover:text-[#4b4c9d] transition-colors duration-300">Register</a>
-                        @endif
                     @endauth
                 @endif
             </div>

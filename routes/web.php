@@ -15,7 +15,8 @@ Route::get('/koleksi', function () {
     return view('koleksi');
 });
 
-Route::middleware(['auth', 'verified'])->group(function () {
+// Routes that require admin authentication
+Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
     // Motor routes
@@ -28,10 +29,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Sale routes
     Route::resource('sales', SaleController::class);
     Route::get('/api/motors/{motor}/price', [SaleController::class, 'getMotorPrice'])->name('motors.price');
-
 });
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
